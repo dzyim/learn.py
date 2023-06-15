@@ -1,13 +1,17 @@
 __all__ = ['AttrDict']
 
+from collections.abc import Mapping
 
-class AttrDict:
+class AttrDict(Mapping):
     '''Make dictionary items as object attributes.'''
     
     def __init__(self, **kwargs):
         for key in kwargs:
             self[key] = kwargs[key]
-    
+
+    def __contains__(self, key):
+        return key in vars(self)
+        
     def __getitem__(self, key):
         val = vars(self)[key]
         if isinstance(val, (tuple, list, set)):
@@ -31,12 +35,6 @@ class AttrDict:
             setattr(self, key, L)
         else:
             setattr(self, key, AttrDict(**val) if isinstance(val, dict) else val)
-    
-    def get(self, key):
-        return vars(self).get(key)
-    
-    def items(self):
-        return vars(self).items()
     
     def todict(self):
         return dict((key, self[key]) for key in self)
