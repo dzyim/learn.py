@@ -1,5 +1,4 @@
 # learn.py
-<br>
 
 Code and Notes for Python Language.
 
@@ -9,9 +8,22 @@ Code and Notes for Python Language.
 <br>
 
 - `AttrDict`: a mapping object that allows attribute-style access, key-style access, and double star `**` unpacking.
-  - Usage: `from dictionary import AttrDict`
+  - Usage:
+    ```python
+    from dictionary import AttrDict
+
+    d = AttrDict(a = 1, b = 2)
+    assert d.a == d['a']
+    ```
 
 - `show`: Compactly display the structure of an arbitrary object, like a dict, a list, etc.
-  - Usage: `from structure import show`
+  - Usage:
+    ```python
+    from structure import Show
+
+    x = {i: list(range(100)) for i in range(100)}
+    show = Show(max_len=10, indent='..', call=True)
+    show(x)
+    ```
 
 <br>
