@@ -7,7 +7,7 @@ Code and Notes for Python Language.
 ## Utilities
 <br>
 
-- `AttrDict`: a mapping object that allows attribute-style access, key-style access, and double star `**` unpacking.
+- `AttrDict`: a mapping that allows attribute-style access, key-style access, and double star `**` unpacking.
   - Usage:
     ```python
     from dictionary import AttrDict
@@ -22,7 +22,7 @@ Code and Notes for Python Language.
     from structure import Show
 
     x = {i: list(range(100)) for i in range(100)}
-    show = Show(max_len=10, indent='..', call=True)
+    show = Show(max_len=10, indent='..')
     show(x)
     ```
 
