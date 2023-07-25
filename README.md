@@ -16,7 +16,7 @@ Code and Notes for Python Language.
     assert d.a == d['a']
     ```
 
-- `show`: Compactly display the structure of an arbitrary object, like a dict, a list, etc.
+- `Show`: Compactly display the structure of an arbitrary object, like a dict, a list, etc.
   - Usage:
     ```python
     from structure import Show
